@@ -49,7 +49,7 @@
     "wiredep": "~2.2.2"
   },
   "scripts": {
-    "preinstall": "bower install",
+    "prestart": "bower install",
     "test": "gulp test"
   },
   "engines": {
