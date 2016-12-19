@@ -52,20 +52,30 @@ function RegisterController( $scope, $mdDialog ){
         });
     };
 
-    
+    $scope.gridOptions = {
+        data: [], //required parameter - array with data
+        //optional parameter - start sort options
+        sort: {
+            predicate: 'companyName',
+            direction: 'asc'
+        }
+    };
+
     function DialogController($scope, $mdDialog) {
-    $scope.hide = function() {
-        $mdDialog.hide();
-    };
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
 
-    $scope.cancel = function() {
-        $mdDialog.cancel();
-    };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
 
-    $scope.answer = function(answer) {
-        $mdDialog.hide(answer);
-    };
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+    }
 }
-}
+
+
 
 

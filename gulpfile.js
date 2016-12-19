@@ -29,7 +29,7 @@ gulp.task('default', ['clean'], function () {
 });
 
 
-/** Heroku deply **/
+/** Heroku deploy **/
 gulp.task('heroku:production',['build'], function(){
   console.log('herokuduction');
 });

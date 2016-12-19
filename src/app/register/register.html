@@ -9,13 +9,15 @@
             <form name="userForm" flex="70" flex-offset="15">
 
                 <div layout="row">
-                    <md-input-container class="md-block" flex layout-margin>
-                        <label>Nombre completo</label>
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
+                        <label> Nombre completo</label>
+                        <md-icon class="fa fa-user-md" aria-hidden="true"></md-icon>
                         <input name="name">
                     </md-input-container>
 
-                    <md-input-container class="md-block" flex layout-margin>
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Cedula profesional</label>
+                        <md-icon class="fa fa-id-card" aria-hidden="true"></md-icon>
                         <input name="identityCard">
                     </md-input-container>
 
@@ -30,11 +32,12 @@
                     <md-button class="md-raised md-primary" flex  ng-click="showAdvanced($event)">Horario de servicio</md-button>
 
                 </div>
-                
+
                 <div layout="column">
                     <md-button class="md-raised md-default" ng-click="addAddress()">+ Nueva dirección</md-button>  
-                    <md-input-container class="md-block" ng-repeat="address in arrayAddress">
+                    <md-input-container class="md-block md-icon-float" ng-repeat="address in arrayAddress">
                         <label>{{address.question}}</label>
+                        <md-icon class="fa fa-address-card" aria-hidden="true"></md-icon>
                         <input name="{{address.name}}">
                     </md-input-container>
                 </div>
@@ -43,18 +46,21 @@
 
                     <md-switch class="md-primary" aria-label="Asistente" layout-padding layout-margin flex>Asistente virtual</md-switch>
 
-                    <md-input-container class="md-block" flex layout-margin>
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Teléfono consultorio</label>
+                        <md-icon class="fa fa-phone" aria-hidden="true"></md-icon>
                         <input name="officePhone" ng-pattern="/^[0-9]{10}$/">
                     </md-input-container>
 
-                    <md-input-container class="md-block" flex layout-margin>
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Teléfono celular</label>
+                        <md-icon class="fa fa-mobile" aria-hidden="true"></md-icon>
                         <input name="mobilePhone" ng-pattern="/^[0-9]{10}$/">
                     </md-input-container>
 
-                    <md-input-container class="md-block" flex layout-margin>
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Email</label>
+                        <md-icon class="fa fa-envelope" aria-hidden="true"></md-icon>
                         <input name="email" type="email">
                     </md-input-container>
                 </div>
