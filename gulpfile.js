@@ -31,5 +31,5 @@ gulp.task('default', ['clean'], function () {
 
 /** Heroku deploy **/
 gulp.task('heroku:production',['build'], function(){
-  console.log('herokuduction');
+  console.log('herokuproduction');
 });
