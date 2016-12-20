@@ -1,4 +1,3 @@
-
 'use strict';
 
 angular
@@ -24,6 +23,8 @@ function RegisterController( $scope, $mdDialog ){
         "question": "Dirección del consultorio completa 1",
         "name": "address1"
     });
+
+
 
     $scope.addAddress = function(){
 
@@ -61,7 +62,7 @@ function RegisterController( $scope, $mdDialog ){
         }
     };
 
-    function DialogController($scope, $mdDialog) {
+    function DialogController($scope, $mdDialog) {        
         $scope.hide = function() {
             $mdDialog.hide();
         };
@@ -73,6 +74,54 @@ function RegisterController( $scope, $mdDialog ){
         $scope.answer = function(answer) {
             $mdDialog.hide(answer);
         };
+
+        $scope.selected = [];
+
+        $scope.query = {
+            order: 'name',
+            limit: 5,
+            page: 1
+        };
+
+        function success(desserts) {
+            $scope.desserts = desserts;
+        }
+
+        $scope.getDesserts = function () {
+            $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
+        };
+
+        $scope.week = [
+            {"day": "Lunes",
+             "hour_init": "",
+             "hour_final": "",
+             "enable": false},
+            {"day": "Martes",
+             "hour_init": "",
+             "hour_final": "",
+             "enable": false},
+            {"day": "Miercoles",
+             "hour_init": "",
+             "hour_final": "",
+             "enable": false},
+            {"day": "Jueves",
+             "hour_init": "",
+             "hour_final": "",
+             "enable": false},
+            {"day": "Viernes",
+             "hour_init": "",
+             "hour_final": "",
+             "enable": false},
+            {"day": "Sabado",
+             "hour_init": "",
+             "hour_final": "",
+             "enable": false},
+            {"day": "Domingo",
+             "hour_init": "",
+             "hour_final": "",
+             "enable": false}
+        ];
+
     }
 }
 
