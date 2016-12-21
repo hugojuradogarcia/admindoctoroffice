@@ -9,7 +9,7 @@ angular
 
     $mdThemingProvider.theme('default')
         .primaryPalette('light-blue')
-    .backgroundPalette('grey')
+        .backgroundPalette('grey')
         .dark();
 
 });
