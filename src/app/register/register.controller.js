@@ -7,8 +7,9 @@ angular
 
     // Configure a dark theme with primary foreground yellow
 
-    $mdThemingProvider.theme('docs-dark', 'default')
-        .primaryPalette('blue')
+    $mdThemingProvider.theme('default')
+        .primaryPalette('light-blue')
+    .backgroundPalette('grey')
         .dark();
 
 });
@@ -37,7 +38,7 @@ function RegisterController( $scope, $mdDialog ){
     };
 
 
-    $scope.showAdvanced = function(ev) {
+    /*$scope.showAdvanced = function(ev) {
         $mdDialog.show({
             controller: DialogController,
             templateUrl: 'app/template/dialogSchedule.tmpl.html',
@@ -51,7 +52,7 @@ function RegisterController( $scope, $mdDialog ){
         }, function() {
             $scope.status = 'You cancelled the dialog.';
         });
-    };
+    };*/
 
     $scope.gridOptions = {
         data: [], //required parameter - array with data
@@ -62,7 +63,38 @@ function RegisterController( $scope, $mdDialog ){
         }
     };
 
-    function DialogController($scope, $mdDialog) {        
+    $scope.week = [
+        {"day": "Lunes",
+         "hour_init": "",
+         "hour_final": "",
+         "enable": false},
+        {"day": "Martes",
+         "hour_init": "",
+         "hour_final": "",
+         "enable": false},
+        {"day": "Miercoles",
+         "hour_init": "",
+         "hour_fina l": "",
+         "enable": false},
+        {"day": "Jueves",
+         "hour_init": "",
+         "hour_final": "",
+         "enable": false},
+        {"day": "Viernes",
+         "hour_init": "12:00:00",
+         "hour_final": "",
+         "enable": false},
+        {"day": "Sábado",
+         "hour_init": "",
+         "hour_final": "",
+         "enable": false},
+        {"day": "Domingo",
+         "hour_init": "",
+         "hour_final": "",
+         "enable": false}
+    ];
+
+    /*function DialogController($scope, $mdDialog) {        
         $scope.hide = function() {
             $mdDialog.hide();
         };
@@ -91,38 +123,9 @@ function RegisterController( $scope, $mdDialog ){
             $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
         };
 
-        $scope.week = [
-            {"day": "Lunes",
-             "hour_init": "",
-             "hour_final": "",
-             "enable": false},
-            {"day": "Martes",
-             "hour_init": "",
-             "hour_final": "",
-             "enable": false},
-            {"day": "Miercoles",
-             "hour_init": "",
-             "hour_final": "",
-             "enable": false},
-            {"day": "Jueves",
-             "hour_init": "",
-             "hour_final": "",
-             "enable": false},
-            {"day": "Viernes",
-             "hour_init": "",
-             "hour_final": "",
-             "enable": false},
-            {"day": "Sabado",
-             "hour_init": "",
-             "hour_final": "",
-             "enable": false},
-            {"day": "Domingo",
-             "hour_init": "",
-             "hour_final": "",
-             "enable": false}
-        ];
 
-    }
+
+    }*/
 }
 
 
