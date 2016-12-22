@@ -9,9 +9,7 @@ angular
 
     $mdThemingProvider.theme('default')
         .primaryPalette('light-blue')
-        .backgroundPalette('grey')
-        .dark();
-
+        //.backgroundPalette('blue')
 });
 
 function RegisterController( $scope, $mdDialog ){
@@ -81,7 +79,7 @@ function RegisterController( $scope, $mdDialog ){
          "hour_final": "",
          "enable": false},
         {"day": "Viernes",
-         "hour_init": "12:00:00",
+         "hour_init": "",
          "hour_final": "",
          "enable": false},
         {"day": "Sábado",
@@ -93,6 +91,8 @@ function RegisterController( $scope, $mdDialog ){
          "hour_final": "",
          "enable": false}
     ];
+    
+    $scope.timeConsultation = ["15", "30", "45", "60"];
 
     /*function DialogController($scope, $mdDialog) {        
         $scope.hide = function() {

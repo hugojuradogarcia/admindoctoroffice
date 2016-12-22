@@ -10,7 +10,7 @@
 
                 <div layout="row">
                     <md-input-container class="md-block md-icon-float" flex layout-margin>
-                        <label> Nombre completo</label>
+                        <label>Nombre completo</label>
                         <md-icon class="fa fa-user-md" aria-hidden="true"></md-icon>
                         <input name="name">
                     </md-input-container>
@@ -32,18 +32,25 @@
 
                     <div layout="row">
                         <div layout="column" ng-repeat="days in week">
-                            <md-input-container class="md-input-has-placeholder" layout-margin layout-align="center center">
-                               
-                                <md-button layout="column" class="md-fab md-primary" layout-align="center">{{days.day | limitTo: 1}}
+                            <div layout="row" layout-align="center center">       
+                                <md-button class="md-fab md-primary" aria-label="{{days.day}}">{{days.day | limitTo: 1}}
                                     <md-tooltip>
                                         {{days.day}}
                                     </md-tooltip>
                                 </md-button>
-                                
-                                <input mdc-datetime-picker="" date="false" time="true" type="text" id="time" short-time="true" min-date="minDate" format="hh:mm a" ng-model="days.hour_init" class="md-input"/>
-                                
-                                <input layout-margin mdc-datetime-picker="" date="false" time="true" type="text" id="time" short-time="true" min-date="days.hour_init" format="hh:mm a" ng-model="days.hour_final" class="md-input"/>
-                                
+                            </div>
+
+                            <md-input-container class="md-input-has-placeholder" layout-padding layout-align="center center">
+
+                                <input type="time" ng-model="days.hour_init" placeholder="HH:mm"/>
+
+                            </md-input-container>
+
+                            <md-input-container class="md-input-has-placeholder" layout-margin layout-align="center center">
+
+                                <input type="time" ng-model="days.hour_final" aria-label="time"/>
+                                <p>{{days.hour_final}}</p>
+
                             </md-input-container>
                         </div>
                     </div>
@@ -85,6 +92,18 @@
                         <md-icon class="fa fa-address-card" aria-hidden="true"></md-icon>
                         <input name="{{address.name}}">
                     </md-input-container>
+                </div>
+
+                <div layout="row">
+                    <md-input-container>
+                        <label>Tiempo de consulta</label>
+                        <md-select ng-model="ctrl.userState">
+                            <md-option><em>None</em></md-option>
+                            <md-option ng-repeat="time in timeConsultation">
+                                {{time}} min
+                            </md-option>
+                        </md-select>
+                    </md-input-container>    
                 </div>
 
                 <div layout="row">
