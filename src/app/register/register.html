@@ -11,7 +11,7 @@
                 <div layout="row">
                     <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Nombre completo</label>
-                        <md-icon class="fa fa-user-md" aria-hidden="true"></md-icon>
+                        <md-icon type="text" class="fa fa-user-md" aria-hidden="true"></md-icon>
                         <input name="name">
                     </md-input-container>
 
@@ -27,35 +27,59 @@
                     </md-input-container> 
                 </div>
 
-                <div layout="column" layout-padding layout-align="center center">
-                    <h3 class="md-title row">Horario de servicio</h3>
+                <div>
+                    <md-list>
+                        <h3 class="md-title row">Horario de servicio</h3>
+                        <md-list-item class="md-10-line">
 
-                    <div layout="row">
-                        <div layout="column" ng-repeat="days in week">
-                            <div layout="row" layout-align="center center">       
+                            <div class="md-list-item-text" ng-repeat="days in week" layout-align="center center" layout="column">
                                 <md-button class="md-fab md-primary" aria-label="{{days.day}}">{{days.day | limitTo: 1}}
                                     <md-tooltip>
                                         {{days.day}}
                                     </md-tooltip>
                                 </md-button>
+
+                                <md-input-container class="md-input-has-placeholder" layout-padding layout-align="center center">
+                                    <input type="text" ng-model="days.hour_init" placeholder="HH:mm" ui-time-mask="short"/>
+                                </md-input-container>    
+
+                                <md-input-container class="md-input-has-placeholder" layout-padding layout-align="center center">
+                                    <input type="text" ng-model="days.hour_final" aria-label="time" ui-time-mask="short"/>
+                                </md-input-container>
+
                             </div>
+                        </md-list-item>
+                    </md-list>    
+                </div>
 
-                            <md-input-container class="md-input-has-placeholder" layout-padding layout-align="center center">
+                <!--<div layout="column" layout-padding layout-align="center center">
+<h3 class="md-title row">Horario de servicio</h3>
 
-                                <input type="time" ng-model="days.hour_init" placeholder="HH:mm"/>
+<div layout="row">
+<div layout="column" ng-repeat="days in week">
+<div layout="row" layout-align="center center">       
+<md-button class="md-fab md-primary" aria-label="{{days.day}}">{{days.day | limitTo: 1}}
+<md-tooltip>
+{{days.day}}
+</md-tooltip>
+</md-button>
+</div>
 
-                            </md-input-container>
+<md-input-container class="md-input-has-placeholder" layout-padding layout-align="center center">
+<input type="text" ng-model="days.hour_init" placeholder="HH:mm" ui-time-mask="short"/>
 
-                            <md-input-container class="md-input-has-placeholder" layout-margin layout-align="center center">
+</md-input-container>
 
-                                <input type="time" ng-model="days.hour_final" aria-label="time"/>
-                                <p>{{days.hour_final}}</p>
+<md-input-container class="md-input-has-placeholder" layout-margin layout-align="center center">
 
-                            </md-input-container>
-                        </div>
-                    </div>
+<input type="text" ng-model="days.hour_final" aria-label="time" ui-time-mask="short"/>
+<p>{{days.hour_final}}</p>
 
-                    <!--<md-table-container>
+</md-input-container>
+</div>
+</div>-->
+
+                <!--<md-table-container>
 <table md-table multiple ng-model="selected" md-progress="promise">
 
 <thead md-head md-order="query.order" md-on-reorder="getDesserts">
@@ -83,7 +107,7 @@
 </table>
 </md-table-container>-->
 
-                </div>
+                <!--</div>-->
 
                 <div layout="column">
                     <md-button class="md-raised md-default" ng-click="addAddress()">+ Nueva dirección</md-button>  
@@ -106,6 +130,23 @@
                     </md-input-container>    
                 </div>
 
+                <div layout="column">
+                    <md-button class="md-raised md-default" ng-click="addService()">+ Agregar un servicio</md-button>  
+                    <div class="row" ng-repeat="service in arrayServices">
+                        <md-input-container class="md-block md-icon-float">
+                            <label>{{service.name}}</label>
+                            <md-icon class="fa fa-address-card" aria-hidden="true"></md-icon>
+                            <input name="{{service.name}}">
+                        </md-input-container>
+
+                        <md-input-container class="md-block md-icon-float">
+                            <label>{{service.cost/label>
+                            <md-icon class="fa fa-address-card" aria-hidden="true"></md-icon>
+                            <input name="{{service.cost}}">
+                        </md-input-container>
+                    </div>
+                </div>
+
                 <div layout="row">
 
                     <md-switch class="md-primary" aria-label="Asistente" layout-padding layout-margin flex>Asistente virtual</md-switch>
@@ -113,13 +154,13 @@
                     <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Teléfono consultorio</label>
                         <md-icon class="fa fa-phone" aria-hidden="true"></md-icon>
-                        <input name="officePhone" ng-pattern="/^[0-9]{10}$/">
+                        <input name="officePhone" ng-model="officeNumber" ui-br-phone-number>
                     </md-input-container>
 
                     <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Teléfono celular</label>
                         <md-icon class="fa fa-mobile" aria-hidden="true"></md-icon>
-                        <input name="mobilePhone" ng-pattern="/^[0-9]{10}$/">
+                        <input name="mobilePhone" ng-model="mobileNumber" ui-br-phone-number>
                     </md-input-container>
 
                     <md-input-container class="md-block md-icon-float" flex layout-margin>

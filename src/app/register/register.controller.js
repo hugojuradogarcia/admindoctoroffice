@@ -1,19 +1,11 @@
 'use strict';
 
 angular
-    .module('doctorOffice')
-    .controller('RegisterController', RegisterController)
-    .config(function($mdThemingProvider) {
-
-    // Configure a dark theme with primary foreground yellow
-
-    $mdThemingProvider.theme('default')
-        .primaryPalette('light-blue')
-        //.backgroundPalette('blue')
-});
+    .module( 'doctorOffice' )
+    .controller( 'RegisterController', RegisterController )
 
 function RegisterController( $scope, $mdDialog ){
-
+    
     $scope.arrayAddress = [];
     $scope.status = '  ';
     $scope.customFullscreen = false;
