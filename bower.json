@@ -20,7 +20,9 @@
     "angular": "~1.5.3",
     "angular-momentjs": "^0.2.2",
     "angular-input-masks": "^2.5.0",
-    "angular-translate": "^2.13.1"
+    "angular-translate": "^2.13.1",
+    "ngMask": "angular-mask#^3.1.1",
+    "angular-material-data-table": "^0.10.10"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3"

@@ -1,12 +1,10 @@
-(function() {
-    'use strict';
-    
-    angular
-        .module('doctorOffice')
-        .controller('PatientController', PatientController);
-    
-    function PatientController(){
-        
-    }
-    
-});
+
+'use strict';
+
+angular
+    .module( 'doctorOffice' )
+    .controller( 'PatientController', PatientController )
+
+function PatientController( $scope ){
+
+}
