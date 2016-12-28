@@ -22,14 +22,14 @@
                 </div>
 
                 <div layout-gt-sm="row" layout="column" layout-align="center top">
-                    <div flex="30">
+                    <div>
                         <h5>Fecha de nacimiento</h5>
-                        <md-datepicker ng-model="patientBirthdate" md-placeholder="Fecha de nacimiento"></md-datepicker>
+                        <md-datepicker ng-model="patientBirthdate" md-placeholder="Fecha de nacimiento" ng-change="calculateAge()"></md-datepicker>
                     </div>
 
                     <md-input-container class="md-block" flex="20">
                         <label>Edad</label>
-                        <input type="text" name="patientAge" ng-model="patientAge">
+                        <input type="text" name="patientAge" ng-model="patientAge" disabled>
                     </md-input-container>
 
                     <md-input-container class="md-block" flex="20">
@@ -52,11 +52,38 @@
                         <label>Dirección</label>
                         <input type="text" name="patientAddress" ng-model="patientAddress">
                     </md-input-container>
-                    
+
                     <md-input-container class="md-block" flex="10" layout-padding>
                         <label>C.P.</label>
                         <input type="text" name="patientZipCode" ng-model="patientZipCode">
                     </md-input-container> 
+                </div>
+
+                <div layout-gt-sm="row" layout="column" layout-margin>
+                    <md-input-container class="md-block" flex="90" layout-padding>
+                        <label>Quien lo recomineda</label>
+                        <input type="text" name="patientRecommendation" ng-model="patientRecommendation">
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-sm="row" layout="column" layout-margin>
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
+                        <label>Teléfono de casa</label>
+                        <md-icon class="fa fa-phone" aria-hidden="true"></md-icon>
+                        <input type="text" name="patientHomePhone" ng-model="patientHomePhone" ui-br-phone-number>
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
+                        <label>Teléfono celular</label>
+                        <md-icon class="fa fa-mobile" aria-hidden="true"></md-icon>
+                        <input type="text" name="patientMobilePhone" ng-model="patientMobilePhone" ui-br-phone-number>
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
+                        <label>Teléfono oficina</label>
+                        <md-icon class="fa fa-building-o" aria-hidden="true"></md-icon>
+                        <input type="text" name="patientOfficePhone" ng-model="patientOfficePhone" ui-br-phone-number>
+                    </md-input-container>
                 </div>
 
             </form>
