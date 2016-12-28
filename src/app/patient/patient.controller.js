@@ -7,4 +7,7 @@ angular
 
 function PatientController( $scope ){
 
+    $scope.patientDischarge = new Date();
+    $scope.maritalStatus = ["Soltero", "Casado"];
+    
 }

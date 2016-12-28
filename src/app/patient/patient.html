@@ -7,24 +7,58 @@
     <md-content layout-padding>
         <div>
             <form name="userForm" flex="70" flex-offset="15">
-                <div layout-gt-sm="row" layout="column">
-                    <md-input-container class="md-block md-icon-float" flex layout-margin>
-                        <label>Fecha de alta</label>
-                        <md-icon type="text" class="fa fa-user-md" aria-hidden="true"></md-icon>
-                        <input type="text" name="name" ng-model="patientDischarge">
+
+                <div layout-gt-sm="row" layout="column" layout-align="center top">
+                    <div flex="30">
+                        <h5>Fecha de alta del paciente</h5>
+                        <md-datepicker ng-model="patientDischarge" md-placeholder="Fecha de alta"></md-datepicker>
+                    </div>
+
+                    <md-input-container class="md-block md-icon-float" flex="70">
+                        <label>Nombre del paciente</label>
+                        <md-icon class="fa fa-wheelchair-alt" aria-hidden="true"></md-icon>
+                        <input type="text" name="patientName" ng-model="patientName">
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-sm="row" layout="column" layout-align="center top">
+                    <div flex="30">
+                        <h5>Fecha de nacimiento</h5>
+                        <md-datepicker ng-model="patientBirthdate" md-placeholder="Fecha de nacimiento"></md-datepicker>
+                    </div>
+
+                    <md-input-container class="md-block" flex="20">
+                        <label>Edad</label>
+                        <input type="text" name="patientAge" ng-model="patientAge">
                     </md-input-container>
 
-                    <md-input-container class="md-block md-icon-float" flex layout-margin>
-                        <label>Cedula profesional</label>
-                        <md-icon class="fa fa-id-card" aria-hidden="true"></md-icon>
-                        <input type="text" name="identityCard" ng-model="doctorIdentityCard" mask="A?9?" restrict="reject" repeat="20">
-                    </md-input-container>
+                    <md-input-container class="md-block" flex="20">
+                        <label>Estado civil</label>
+                        <md-select ng-model="patientMaritalStatus">
+                            <md-option ng-repeat="status in maritalStatus">
+                                {{status}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container> 
 
-                    <md-input-container class="md-block" flex layout-margin>
-                        <label>Especialidad</label>
-                        <input type="text" name="specialty" ng-model="doctorSpecialty">
+                    <md-input-container class="md-block" flex="30">
+                        <label>Ocupación</label>
+                        <input type="text" name="patientEmployment" ng-model="patientEmployment">
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-sm="row" layout="column" layout-margin>
+                    <md-input-container class="md-block" flex="90" layout-padding>
+                        <label>Dirección</label>
+                        <input type="text" name="patientAddress" ng-model="patientAddress">
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block" flex="10" layout-padding>
+                        <label>C.P.</label>
+                        <input type="text" name="patientZipCode" ng-model="patientZipCode">
                     </md-input-container> 
                 </div>
+
             </form>
         </div>
     </md-content>
