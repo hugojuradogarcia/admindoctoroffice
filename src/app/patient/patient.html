@@ -72,17 +72,130 @@
                         <md-icon class="fa fa-phone" aria-hidden="true"></md-icon>
                         <input type="text" name="patientHomePhone" ng-model="patientHomePhone" ui-br-phone-number>
                     </md-input-container>
-                    
+
                     <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Teléfono celular</label>
                         <md-icon class="fa fa-mobile" aria-hidden="true"></md-icon>
                         <input type="text" name="patientMobilePhone" ng-model="patientMobilePhone" ui-br-phone-number>
                     </md-input-container>
-                    
+
                     <md-input-container class="md-block md-icon-float" flex layout-margin>
                         <label>Teléfono oficina</label>
                         <md-icon class="fa fa-building-o" aria-hidden="true"></md-icon>
                         <input type="text" name="patientOfficePhone" ng-model="patientOfficePhone" ui-br-phone-number>
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-sm="row" layout="column" layout-margin>
+                    <md-input-container class="md-block md-icon-float" flex layout-margin>
+                        <label>Email</label>
+                        <md-icon class="fa fa-envelope" aria-hidden="true"></md-icon>
+                        <input type="email" name="patientEmail" ng-model="patientEmail">
+                    </md-input-container>
+                </div>
+
+                <md-table-container>
+                    <h4>Antecendentes médicos familiares directos (papás, tíos, abuelos, etc)</h4>
+                    <table md-table>
+
+                        <thead md-head>
+                            <tr md-row>
+                                <th md-column>Cáncer</th>
+                                <th md-column>Diabetes</th>
+                                <th md-column>Hipertensión</th>
+                                <th md-column>Cardiopatías</th>
+                                <th md-column>Hereditarios/Congenitos</th>
+                                <th md-column>Otros</th>
+                            </tr>
+                        </thead>
+
+                        <tbody md-body>
+                            <tr md-row>
+                                <td md-cell>
+                                   <p><input type="text" name="patientCancer1" ng-model="patientCancer"></p>
+                                    <p><input type="text" name="patientCancer2" ng-model="patientCancer"></p>
+                                    <p><input type="text" name="patientCancer3" ng-model="patientCancer"></p>
+                                </td>
+                                <td md-cell>
+                                   <p><input type="text" name="patientDiabetes1" ng-model="patientDiabetes"></p>
+                                    <p><input type="text" name="patientDiabetes2" ng-model="patientDiabetes"></p>
+                                    <p><input type="text" name="patientDiabetes3" ng-model="patientDiabetes"></p>
+                                </td>
+                                <td md-cell>
+                                   <p><input type="text" name="patientHipertension1" ng-model="patientHipertension"></p>
+                                    <p><input type="text" name="patientHipertension2" ng-model="patientHipertension"></p>
+                                    <p><input type="text" name="patientHipertension3" ng-model="patientHipertension"></p>
+                                </td>
+                                <td md-cell>
+                                   <p><input type="text" name="patientCardiopatia1" ng-model="patientCardiopatia"></p>
+                                    <p><input type="text" name="patientCardiopatia2" ng-model="patientCardiopatia"></p>
+                                    <p><input type="text" name="patientCardiopatia3" ng-model="patientCardiopatia"></p>
+                                </td>
+                                <td md-cell>
+                                   <p><input type="text" name="patientCongenitos1" ng-model="patientCongenitos"></p>
+                                    <p><input type="text" name="patientCongenitos2" ng-model="patientCongenitos"></p>
+                                    <p><input type="text" name="patientCongenitos3" ng-model="patientCongenitos"></p>
+                                </td>
+                                <td md-cell>
+                                   <p><input type="text" name="patientOtros1" ng-model="patientOtros"></p>
+                                    <p><input type="text" name="patientOtros2" ng-model="patientOtros"></p>
+                                    <p><input type="text" name="patientOtros3" ng-model="patientOtros"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </md-table-container>
+                
+                <md-table-container>
+                    <h4>Antecendentes personale</h4>
+                    <table md-table>
+
+                        <thead md-head>
+                            <tr md-row>
+                                <th md-column>Tabaquismo</th>
+                                <th md-column>Consumo de alcohol</th>
+                                <th md-column>Otras sustancias</th>
+                            </tr>
+                        </thead>
+
+                        <tbody md-body>
+                            <tr md-row>
+                                <td md-cell>
+                                   <p><input type="text" name="patientTabaquismo1" ng-model="patientTabaquismo"></p>
+                                    <p><input type="text" name="patientTabaquismo2" ng-model="patientTabaquismo"></p>
+                                    <p><input type="text" name="patientTabaquismo3" ng-model="patientTabaquismo"></p>
+                                </td>
+                                <td md-cell>
+                                   <p><input type="text" name="patientAlcohol1" ng-model="patientAlcohol"></p>
+                                    <p><input type="text" name="patientAlcohol2" ng-model="patientAlcohol"></p>
+                                    <p><input type="text" name="patientAlcohol3" ng-model="patientAlcohol"></p>
+                                </td>
+                                <td md-cell>
+                                   <p><input type="text" name="patientDrogas1" ng-model="patientDrogas"></p>
+                                    <p><input type="text" name="patientDrogas2" ng-model="patientDrogas"></p>
+                                    <p><input type="text" name="patientDrogas3" ng-model="patientDrogas"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </md-table-container>
+                
+                 <div layout-gt-sm="row" layout="column" layout-margin>
+                    <md-input-container class="md-block" flex layout-margin>
+                        <label>Alergias</label>
+                        <input type="text" name="patientAllergies" ng-model="patientAllergies">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex layout-margin>
+                        <label>Tipo de sangre</label>
+                        <input type="text" name="patientBlood" ng-model="patientBlood">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex layout-margin>
+                        <label>Otras observaciones</label>
+                        <input type="text" name="patientObservations" ng-model="patientObservations">
                     </md-input-container>
                 </div>
 
